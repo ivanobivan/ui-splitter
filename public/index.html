@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <link href="index.css" rel="stylesheet"/>
+    <script type="application/javascript" src="index.js"></script>
+    <title>ui-splitter</title>
+</head>
+<body>
+<main>
+    <aside class="sidebar">
+        <fieldset>
+            <legend>First Splitter api</legend>
+            <button type="button" id="changeDirection">Change Orientation</button>
+            <button type="button" id="collapse">Collapse</button>
+            <button type="button" id="expand">Expand</button>
+            <button type="button" id="setSizes">setSizes</button>
+        </fieldset>
+        <fieldset>
+            <legend>second splitter api</legend>
+            <button type="button" id="changeDirection2">Change Orientation</button>
+            <button type="button" id="collapse2">Collapse</button>
+            <button type="button" id="expand2">Expand</button>
+            <button type="button" id="setSizes2">setSizes</button>
+        </fieldset>
+        <fieldset>
+            <legend>third splitter api</legend>
+            <button type="button" id="changeDirection3">Change Orientation</button>
+            <button type="button" id="collapse3">Collapse</button>
+            <button type="button" id="expand3">Expand</button>
+            <button type="button" id="setSizes3">setSizes</button>
+        </fieldset>
+
+
+    </aside>
+    <div class="container">
+        <div id="one"></div>
+        <div id="two">
+            <div id="three"></div>
+            <div id="four">
+                <div id="five"></div>
+                <div id="six"></div>
+            </div>
+        </div>
+    </div>
+</main>
+<script>
+
+    let splitter = split(["#one", "#two"], {
+        orientation: "horizontal",
+        //initialSizes: ["10", "100px"],
+        //minimalSizes: [100],
+        onDragStart: () => console.log("start"),
+        onDragEnd: () => console.log("end"),
+        collapsedOnStart: false,
+        collapseMode: "collapse",
+        hideSplitterOnCollapse: false,
+        collapsedCaption: "test caption",
+        //splitterDirection: "revert",
+        //hideSplitButton: true
+        //disableCollapse: true,
+    });
+
+    let splitter2 = split(["#three", "#four"], {
+        orientation: "vertical",
+        collapseMode: "collapse"
+    });
+
+    let splitter3 = split(["#five", "#six"]);
+
+    document.getElementById("changeDirection").onclick = () => {
+        splitter = splitter.changeOrientation();
+    };
+
+    document.getElementById("collapse").onclick = () => {
+        splitter.collapse();
+    };
+
+    document.getElementById("expand").onclick = () => {
+        splitter.expand();
+    };
+
+    document.getElementById("setSizes").onclick = () => {
+        splitter.setSizes(["50%", "50%"]);
+    };
+
+    document.getElementById("changeDirection2").onclick = () => {
+        splitter2 = splitter2.changeOrientation();
+    };
+
+    document.getElementById("collapse2").onclick = () => {
+        splitter2.collapse();
+    };
+
+    document.getElementById("expand2").onclick = () => {
+        splitter2.expand();
+    };
+
+    document.getElementById("setSizes2").onclick = () => {
+        splitter2.setSizes(["50%", "50%"]);
+    };
+
+
+    document.getElementById("changeDirection3").onclick = () => {
+        splitter3 = splitter3.changeOrientation();
+    };
+
+    document.getElementById("collapse3").onclick = () => {
+        splitter3.collapse();
+    };
+
+    document.getElementById("expand3").onclick = () => {
+        splitter3.expand();
+    };
+
+    document.getElementById("setSizes3").onclick = () => {
+        splitter3.setSizes(["50%", "50%"]);
+    };
+</script>
+</body>
+</html>

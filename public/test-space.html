@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <link href="test-space.css" rel="stylesheet"/>
+    <script type="application/javascript" src="index.js"></script>
+    <title>test-space-ui-splitter</title>
+</head>
+<body>
+<main>
+    <div id="container">
+        <div id="one"></div>
+        <div id="two"></div>
+    </div>
+</main>
+<script>
+
+    const cleanDOM = () => {
+        document.getElementById("container").innerHTML = "<div id=\"one\"></div><div id=\"two\"></div>";
+    }
+
+    window.splitter = null;
+
+
+    window.createSplitter = (orientation) => {
+        window.splitter = split(["#one", "#two"], {
+            orientation: orientation
+        });
+    }
+    window.changeInitialSizes = (orientation, initialSizes) => {
+        cleanDOM();
+        window.splitter = split(["#one", "#two"], {
+            orientation: orientation,
+            initialSizes: initialSizes
+        });
+    }
+    window.changeMinimalSizes = (orientation, minimalSizes) => {
+        cleanDOM();
+        window.splitter = split(["#one", "#two"], {
+            orientation: orientation,
+            minimalSizes: minimalSizes
+        });
+    }
+    window.changeSplitterSize = (orientation, splitterSize) => {
+        cleanDOM();
+        window.splitter = split(["#one", "#two"], {
+            orientation: orientation,
+            splitterSize: splitterSize
+        });
+    }
+    window.changeSplitterClassName = (orientation, splitterClassName) => {
+        cleanDOM();
+        window.splitter = split(["#one", "#two"], {
+            orientation: orientation,
+            splitterClassName: splitterClassName
+        });
+    }
+    window.setDragHandlers = (orientation) => {
+        cleanDOM();
+        window.splitter = split(["#one", "#two"], {
+            orientation: orientation,
+            onDragStart: () => console.log("onDragStart"),
+            onDrag: () => console.log("dragging"),
+            onDragEnd: () => console.log("onDragEnd")
+        });
+    }
+    window.setDisableCollapse = (orientation, disableCollapse) => {
+        cleanDOM();
+        window.splitter = split(["#one", "#two"], {
+            orientation: orientation,
+            disableCollapse: disableCollapse
+        });
+    }
+    window.setCollapsedOnStart = (orientation, collapsedOnStart) => {
+        cleanDOM();
+        window.splitter = split(["#one", "#two"], {
+            orientation: orientation,
+            collapsedOnStart: collapsedOnStart
+        });
+    }
+    window.setOnSplitButtonClick = (orientation) => {
+        cleanDOM();
+        window.splitter = split(["#one", "#two"], {
+            orientation: orientation,
+            onSplitButtonClick: () => console.log("onSplitButtonClick")
+        });
+    }
+    window.setCollapseMode = (orientation, collapseMode) => {
+        cleanDOM();
+        window.splitter = split(["#one", "#two"], {
+            orientation: orientation,
+            collapseMode: collapseMode
+        });
+    }
+    window.setHideSplitterOnCollapse = (orientation, collapseMode, hideSplitterOnCollapse) => {
+        cleanDOM();
+        window.splitter = split(["#one", "#two"], {
+            orientation: orientation,
+            collapseMode: collapseMode,
+            hideSplitterOnCollapse: hideSplitterOnCollapse
+        });
+    }
+    window.setCollapsedCaption = (orientation) => {
+        cleanDOM();
+        window.splitter = split(["#one", "#two"], {
+            orientation: orientation,
+            collapseMode: "replace",
+            collapsedCaption: "testCaption"
+        });
+    }
+    window.setExpandOnlyOnButton = (orientation, collapseMode) => {
+        cleanDOM();
+        window.splitter = split(["#one", "#two"], {
+            orientation: orientation,
+            collapseMode: collapseMode
+        });
+    }
+    window.setChangeDirection = (orientation, splitterDirection) => {
+        cleanDOM();
+        window.splitter = split(["#one", "#two"], {
+            orientation: orientation,
+            splitterDirection: splitterDirection
+        });
+    }
+    window.setHideSplitButton = (orientation) => {
+        cleanDOM();
+        window.splitter = split(["#one", "#two"], {
+            orientation: orientation,
+            hideSplitButton: true
+        });
+    }
+    window.setFunctionsToWindow = (orientation) => {
+        cleanDOM();
+        window.splitter = split(["#one", "#two"], {
+            orientation: orientation,
+            minimalSizes: [0, 0]
+        });
+        window.changeOrientation = () => {
+            window.splitter = window.splitter.changeOrientation();
+        };
+        window.collapse = () => {
+            window.splitter.collapse();
+        }
+        window.expand = () => {
+            window.splitter.expand();
+        }
+        window.setSizes = (sizes) => {
+            window.splitter.setSizes(sizes)
+        }
+    }
+</script>
+</body>
+</html>

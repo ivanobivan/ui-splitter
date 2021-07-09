@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UI-Splitter-react</title>
+    <link rel="stylesheet" href="./index.css" />
+</head>
+<body>
+<main>
+    <div id="root"></div>
+</main>
+
+<script type="application/javascript" src="../node_modules/react/umd/react.development.js"></script>
+<script type="application/javascript" src="../node_modules/react-dom/umd/react-dom.development.js"></script>
+
+<script type="module">
+    import "../dist/index.js";
+
+    class Component extends React.Component {
+
+        getSplitterApi = (api) => {
+            this.splitterApi = api;
+            console.log(this.splitterApi);
+        }
+
+        render() {
+            return React.createElement(
+                SplitWrapper.default,
+                {
+                    orientation: "vertical",
+                    getSplitterApi: this.getSplitterApi
+                },
+                React.createElement("div", {id: "one"}),
+                React.createElement("div", {id: "two"})
+            );
+        }
+    }
+    ReactDOM.render(React.createElement(Component), document.getElementById("root"));
+</script>
+</body>
+</html>

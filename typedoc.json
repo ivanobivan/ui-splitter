@@ -1,0 +1,10 @@
+{
+  "entryPoints": [
+    "src/ts/index.ts"
+  ],
+  "out": "docs",
+  "readme": "./README.md",
+  "hideGenerator": true,
+  "name": "Split-элемент функционально похожий на jquery-splitter",
+  "includeVersion": true
+}
