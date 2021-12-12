@@ -5,6 +5,8 @@
   "out": "docs",
   "readme": "./README.md",
   "hideGenerator": true,
-  "name": "Split-элемент функционально похожий на jquery-splitter",
-  "includeVersion": true
+  "name": "UI-Splitter",
+  "includeVersion": true,
+  "theme": "default",
+  "darkHighlightTheme": "dark-plus"
 }

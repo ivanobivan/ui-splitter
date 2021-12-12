@@ -1,4 +1,5 @@
-node_modules/
-lib/
-dist/
-*.lock
+node_modules
+lib
+dist
+docs
+.idea
