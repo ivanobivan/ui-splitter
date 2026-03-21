@@ -1,8 +1,6 @@
 {
-  "entryPoints": [
-    "src/ts/index.ts"
-  ],
-  "out": "docs",
+  "entryPoints": ["src/ts/index.ts"],
+  "out": "api-docs",
   "readme": "./README.md",
   "hideGenerator": true,
   "name": "UI-Splitter",
@@ -10,3 +8,4 @@
   "theme": "default",
   "darkHighlightTheme": "dark-plus"
 }
+
