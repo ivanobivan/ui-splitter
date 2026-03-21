@@ -1,5 +1,6 @@
 # UI-Splitter
 Split element functionally similar to jquery-splitter
+#### [Demo](https://ivanobivan.github.io/ui-splitter/)
 ### Peculiarities
 - Uses its own styles
 - Written in vanilla-js
