@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+main {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 1fr;
+}
+.container {
+
+}
+#one {
+    background-color: lightgoldenrodyellow;
+}
+
+#two {
+    background-color: white;
+}
+
+#three {
+    background-color: lightcoral;
+}
+
+#four {
+    background-color: lightgray;
+}
+#five {
+    background-color: lightgreen;
+}
+
+#six {
+    background-color: lightsalmon;
+}
